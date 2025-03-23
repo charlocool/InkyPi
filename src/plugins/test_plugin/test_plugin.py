@@ -13,6 +13,8 @@ logger = logging.getLogger(__name__)
 PLUGINS_DIR = resolve_path("plugins")
 TEST_PLUGIN_DIR =  os.path.join(PLUGINS_DIR, "test_plugin")
 
+# Comment by charlocool
+
 FRAME_STYLES = [
     {
         "name": "None",
