@@ -23,7 +23,7 @@ UNITS = {
     }
 }
 
-WEATHER_URL = "https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={long}&units={units}&exclude=minutely&appid={api_key}"
+WEATHER_URL = "http://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={long}&units={units}&exclude=minutely&appid={api_key}"
 AIR_QUALITY_URL = "http://api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={long}&appid={api_key}"
 GEOCODING_URL = "http://api.openweathermap.org/geo/1.0/reverse?lat={lat}&lon={long}&limit=1&appid={api_key}"
 
