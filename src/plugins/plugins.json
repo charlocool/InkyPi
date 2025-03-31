@@ -10,8 +10,8 @@
         "class": "Weather"
     },
     {
-    "display_name": "Test plugin",
-    "id": "test_plugin",
-    "class": "TestPlugin"
+    "display_name": "F1 Standings",
+    "id": "f1_standings",
+    "class": "F1Standings"
 }
 ]
