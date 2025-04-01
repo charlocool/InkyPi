@@ -60,6 +60,11 @@
     width: 50%;
   }
 
+  .current-points {
+    justify-content: center;
+    width: 100%;
+  }
+
 }
 
 @media (max-width: 250px) {
