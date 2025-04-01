@@ -1,74 +1,64 @@
 /* Basic Reset */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-smooth: never;
-    -webkit-font-smoothing: none;
-    -moz-osx-font-smoothing: grayscale; /* Alternative for macOS */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-img {
-    image-rendering: pixelated; /* Preserve sharp edges */
-    image-rendering: crisp-edges;
-    image-rendering: -webkit-optimize-contrast;
+.f1-standings-dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1dvh;
+  width: 100%;
+  height: 100%;
+  font-family: "Jost"
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+.driver-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
 }
 
-.row-container {
-    display: flex;
+.current-leader-icon {
+  height: auto;
+  max-width: 90%;
+  width: auto;
+  max-height: 100%;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  object-fit: contain;
+}
+
+.current-standings {
+  font-size: 45cqmin;
+  text-align: center;
+  align-content: end;
+  position: relative;
+  height: 55%;
+}
+
+@media (max-aspect-ratio: 1) {
+  .driver-container {
     flex-direction: column;
-    height: 100%;
-}
+    gap: 1dvh
+  }
 
-.column-container {
-    display: flex;
-    flex-direction: row;
+  /* Current Weather Row */
+  .current-leader {
+    justify-content: center;
     width: 100%;
-}
-
-
-/* Frame Styling */
-
-.rectangle-frame {
-    border: 0.7vw solid;
-}
-
-.top-bottom-frame {
-    border-top: 0.7vw solid;
-    border-bottom: 0.7vw solid;
-}
-
-.corner-frame {
-    position:relative;
-}
-.corner-frame:before {
-    display: block;
-    content: "";
-    width: 10vw;
-    height: 10vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-top: 0.7vw solid;
-    border-left: 0.7vw solid;
   }
-  
-  .corner-frame:after {
-    display: block;
-    content: "";
-    width: 10vw;
-    height: 10vw;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    border-bottom: 0.5vw solid;
-    border-right: 0.5vw solid;
+
+}
+
+@media (max-width: 250px) {
+  .f1-standings-dashboard {
+      font-family: "Dogica";
   }
+}
