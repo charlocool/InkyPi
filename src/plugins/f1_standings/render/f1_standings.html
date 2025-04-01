@@ -1,0 +1,19 @@
+{% extends "plugin.html" %}
+
+<div class="weather-dashboard">
+  <!-- Current Date -->
+  <div class="header">
+    <div class="current-date">{{ current_date }}</div>
+  </div>
+
+  <div class="driver-container">
+    <!-- Current Leader Row -->
+    <div class="current-leader">
+      <!-- Leader image + Points -->
+        <img class="current-icon" src="{{current_leader_icon}}" alt="Current Leader Icon">
+        <div class="current-standings">
+          <div class="current-points">{{ current_points }}</div>
+        </div>
+    </div>
+  </div>
+</div>
