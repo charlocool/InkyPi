@@ -71,9 +71,8 @@ class F1Standings(BasePlugin):
         driver_standings_data = self.parse_driver_standings_data(self.get_driver_standings_data())
 
         dimensions = device_config.get_resolution()
-        dimensions = dimensions[::-1]
-        # if device_config.get_config("orientation") == "vertical":
-        #     pass
+        if device_config.get_config("orientation") == "vertical":
+            dimensions = dimensions[::-1]
 
         template_params = self.parse_driver_leader(driver_standings_data)
 
