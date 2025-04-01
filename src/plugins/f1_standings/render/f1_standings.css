@@ -49,10 +49,15 @@
     gap: 1dvh
   }
 
-  /* Current Weather Row */
+  /* Current Leader Row */
   .current-leader {
-    justify-content: center;
-    width: 100%;
+    justify-content: left;
+    width: 50%;
+  }
+
+  .current-standings {
+    justify-content: right;
+    width: 50%;
   }
 
 }
