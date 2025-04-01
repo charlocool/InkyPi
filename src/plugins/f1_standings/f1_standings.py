@@ -60,7 +60,7 @@ class F1Standings(BasePlugin):
         return standings
 
     def parse_driver_leader(self, driver_standings_data) -> dict:
-        current_leader_name = list(driver_standings_data.keys())[1]
+        current_leader_name = list(driver_standings_data.keys())[0]
         data = {
             "current_leader_icon": self.get_plugin_dir(f'icons/drivers/{current_leader_name}.png'),
             "current_points": driver_standings_data[current_leader_name]['points']
