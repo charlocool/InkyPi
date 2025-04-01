@@ -76,8 +76,6 @@ class F1Standings(BasePlugin):
 
         template_params = self.parse_driver_leader(driver_standings_data)
 
-        self.render_image(dimensions, "weather.html", "weather.css", template_params)
-
         image = self.render_image(
             dimensions, 'f1_standings.html', 'f1_standings.css', template_params
         )
