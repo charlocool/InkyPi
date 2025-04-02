@@ -28,14 +28,18 @@ class F1Standings(BasePlugin):
     def parse_constructor_standings_data(self, constructor_standings_data):
         standing_list = constructor_standings_data['MRData']['StandingsTable']['StandingsLists'][0][
             'ConstructorStandings']
-        standings = {}
+        constructors = []
         for standing in standing_list:
-            standings[standing['Constructor']['constructorId']] = {
+            team_name = standing['Constructor']['constructorId']
+            constructor = {
+                'name': team_name,
                 'position': standing['position'],
                 'points': standing['points'],
-                'wins': standing['wins']
+                'wins': standing['wins'],
+                "car_icon": self.get_plugin_dir(f'icons/cars/{team_name}.png'),
             }
-        return standings
+            constructors.append(constructor)
+        return constructors
 
     def get_driver_standings_data(self):
         url = F1_DRIVER_STANDINGS_URL
@@ -68,15 +72,17 @@ class F1Standings(BasePlugin):
         return data
 
     def generate_image(self, settings, device_config):
-        driver_standings_data = self.parse_driver_standings_data(self.get_driver_standings_data())
+        constructor_standings_data = self.parse_constructor_standings_data(self.get_constructor_standings_data())
 
         dimensions = device_config.get_resolution()
         if device_config.get_config("orientation") == "vertical":
             dimensions = dimensions[::-1]
 
-        template_params = self.parse_driver_leader(driver_standings_data)
+        data = {
+            'constructors': constructor_standings_data,
+        }
 
         image = self.render_image(
-            dimensions, 'f1_standings.html', 'f1_standings.css', template_params
+            dimensions, 'f1_standings.html', 'f1_standings.css', data
         )
         return image

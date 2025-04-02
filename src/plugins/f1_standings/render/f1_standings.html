@@ -1,12 +1,15 @@
+<!DOCTYPE html>
+
 <div class="f1-standings-dashboard">
-    <div class="driver-container">
-        <!-- Current Leader Row -->
-        <div class="current-leader">
-            <!-- Leader image + Points -->
-            <img class="current-leader-icon" src="{{current_leader_icon}}" alt="Current Leader Icon">
-            <div class="current-standings">
-                <div class="current-points">{{ current_points }}</div>
-            </div>
+    {% for constructor in constructors %}
+    <div class="constructor-container">
+        <div>
+            <img class="car-icon"
+                 src="{{constructor.car_icon}}"
+                 alt="Car Icon">
         </div>
     </div>
+    {% endfor %}
 </div>
+
+

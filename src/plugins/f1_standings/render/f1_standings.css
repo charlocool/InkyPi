@@ -16,23 +16,67 @@
   font-family: "Jost"
 }
 
-.driver-container {
+.constructor-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: left;
   width: 100%;
   overflow: hidden;
 }
 
-.current-leader-icon {
+.drivers {
+  display: flex;
+  flex-direction: row; /* Column on small screens */
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 0 2vw;
+  height: 100%;
+  overflow: hidden;
+}
+
+.driver {
+  display: flex;
+  flex-direction: row; /* Column on small screens */
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 0 2vw;
+  height: 100%;
+  overflow: hidden;
+}
+
+.driver-icon {
   height: auto;
-  max-width: 30%;
+  max-width: 50%;
   width: auto;
   max-height: 30%;
   flex: 1;
   min-width: 0;
   min-height: 0;
   object-fit: contain;
+}
+
+.car-icon {
+  height: auto;
+  max-width: 90%;
+  width: auto;
+  max-height: 100%;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  object-fit: contain;
+}
+
+.current-weather {
+  container-type: size;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
+  width: 100%;
+  justify-content: center;
+  min-width: 0;
 }
 
 .current-standings {
@@ -43,14 +87,22 @@
   height: 10%;
 }
 
+.current-temp {
+  font-size: 10cqmin;
+  text-align: right;
+  align-content: end;
+  position: relative;
+  height: 100%;
+}
+
 @media (max-aspect-ratio: 1) {
-  /*.driver-container {*/
-  /*  flex-direction: column;*/
-  /*  gap: 1dvh*/
-  /*}*/
+  .constructor-container {
+    flex-direction: column;
+    gap: 1dvh
+  }
 
   /* Current Leader Row */
-  .current-leader {
+  .drivers {
     justify-content: left;
     width: 50%;
   }
@@ -70,5 +122,11 @@
 @media (max-width: 250px) {
   .f1-standings-dashboard {
       font-family: "Dogica";
+  }
+
+  /* Current Weather Row */
+  .current-temperature {
+    justify-content: center;
+    width: 100%;
   }
 }
